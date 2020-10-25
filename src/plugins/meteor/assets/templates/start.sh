@@ -74,7 +74,7 @@ sudo docker run \
   -d \
   --restart=always \
   $VOLUME \
-  <% if((sslConfig && typeof sslConfig.autogenerate === "object") || (typeof proxyConfig === "object" && !proxyConfig.loadBalancing))  { %> \
+  <% if((sslConfig && typeof sslConfig.autogenerate === "object") || (typeof proxyConfig === "object" && !proxyConfig.loadBalancing) || docker.expose)  { %> \
   --expose=<%= docker.imagePort %> \
   <% } else { %> \
   --publish=$BIND:$PORT:<%= docker.imagePort %> \

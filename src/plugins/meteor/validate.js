@@ -32,7 +32,8 @@ const schema = joi.object().keys({
       .items(joi.string()),
     buildInstructions: joi.array().items(joi.string()),
     stopAppDuringPrepareBundle: joi.bool(),
-    useBuildKit: joi.bool()
+    useBuildKit: joi.bool(),
+    expose: joi.bool()
   }),
   buildOptions: joi.object().keys({
     serverOnly: joi.bool(),
